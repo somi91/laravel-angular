@@ -6,3 +6,4 @@ app.controller('IndexController',['$scope', '$http', '$location', function($scop
     $scope.proba = "ovo je kada sam na root url-u";
 
 }]);
+
