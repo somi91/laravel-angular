@@ -1,0 +1,68 @@
+
+
+/* ==========================================================================
+   Author's custom styles
+   ========================================================================== */
+body {
+    padding-top: 50px;
+    padding-bottom: 20px;
+}
+h1 {
+    margin-bottom: 30px;
+}
+strong, img {
+    display: block;
+}
+img {
+    margin: 0 auto;
+    border-radius: 10px;
+}
+.text-center {
+    text-align: center;
+}
+#logout {
+    margin-top: 10px;
+}
+ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0 auto;
+}
+
+ul li {
+    display: inline-block;
+    margin: 20px;
+    opacity: 0.7;
+    transition-duration: .3s;
+    -webkit-transition-duration: .3s;
+    -moz-transition-duration: .3s;
+}
+
+ul li img {
+    width: 300px;
+}
+
+ul li:hover {
+    opacity: 1;
+}
+
+.big-img {
+    display: block;
+    width: 80%;
+    margin: 0 auto;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
