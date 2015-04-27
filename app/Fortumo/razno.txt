@@ -1,0 +1,9 @@
+First, add this on your page once
+
+<script src="//fortumo.com/javascripts/fortumopay.js" type="text/javascript"></script>
+
+And then add this where you want the payment button
+
+<a id="fmp-button" href="#" rel="e18adcbdace6855b796ef87356996244"><img src="//fortumo.com/images/fmp/fortumopay_96x47.png" width="96" height="47" alt="Mobile Payments by Fortumo" border="0" /></a>
+
+You can connect payment with particular resource (i.e user) of your system by putting its ID (separated by "/") to the end of serviceID inside the button "rel" attribute. This ID will be will be included in the reply requests to your server with parameter cuid.
