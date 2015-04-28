@@ -17,23 +17,34 @@ angular.module('laravelAndAngular', [
         var shouldLogin = toState.data !== undefined
                       && toState.data.requireLogin 
                       && !authService.isLoggedIn;
-        
+        var bendShouldLogin = toState.data !== undefined
+                      && toState.data.bend
+                      && toState.name == "bends.list"
+                      && toState.data.requireLogin 
+                      && !authService.isLoggedInAsBend;
+        var userShouldLogin = toState.data !== undefined
+                      && toState.data.user
+                      && toState.name == "users.list"
+                      && toState.data.requireLogin 
+                      && !authService.isLoggedInAsUser;
+
         // NOT authenticated - wants any private stuff
-        if(shouldLogin)
+        if(bendShouldLogin)
         {
-          if(toState.name == "bends.list") {
             $state.go('loginAsBend');
             event.preventDefault();
             return;
-          } else {
+        }
+
+        if(userShouldLogin)
+        {
             $state.go('login');
             event.preventDefault();
             return;
-          }
         }
 
         // authenticated (previously)
-        if(authService.isLoggedIn) 
+        if(authService.isLoggedInAsUser || authService.isLoggedInAsBend) 
         {
           return;        
         }      
@@ -86,7 +97,8 @@ angular.module('laravelAndAngular', [
         .state('logout', {
           url: '/logout',
           controller: function($scope, $window, authService) {
-            authService.isLoggedIn = false;
+            authService.isLoggedInAsUser = false;
+            authService.isLoggedInAsBend = false;
             // $window.location.reload();
             $window.location.href = '#/login';
             // $route.reload();

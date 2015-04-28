@@ -29,7 +29,10 @@ angular.module('laravelAndAngular.bends', [
               template: '<a ui-sref="logout">Logout</a>'
             }
           },
-          data: { requireLogin: true }
+          data: {
+            requireLogin: true,
+            bend: true
+          }
           
         })
 
@@ -38,7 +41,10 @@ angular.module('laravelAndAngular.bends', [
         /////////////////////
         .state('bends.list', {
           url: '',
-          data: { requireLogin: true },
+          data: {
+            requireLogin: true,
+            bend: true
+          },
           templateUrl: 'app/bends/templates/bends.list.html'
         });
     }

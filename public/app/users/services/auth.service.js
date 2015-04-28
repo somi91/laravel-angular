@@ -4,6 +4,9 @@ angular
 
 authService.$inject = [];
 function authService() { 
-  return { isLoggedIn : false};
+  return {
+  	isLoggedInAsBend: false,
+  	isLoggedInAsUser: false
+  };
 	
 }

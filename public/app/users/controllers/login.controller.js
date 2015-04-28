@@ -4,8 +4,6 @@ angular
 
 LoginController.$inject = ['$scope', '$state', 'authService', 'users'];
 function LoginController($scope, $state, authService, users) { 
-
-
 	$scope.auth = authService;
 
 	$scope.save = function(user) {
@@ -21,7 +19,11 @@ function LoginController($scope, $state, authService, users) {
 	};
 
 	function doRedirect(check) {
-		$scope.auth.isLoggedIn = true;
+		if(check == "users"){
+			authService.isLoggedInAsUser = true;	
+		} else{
+			authService.isLoggedInAsBend = true;
+  		}
 		window.location.href = '#/'+check;
 	};
 };

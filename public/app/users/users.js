@@ -35,7 +35,10 @@ angular.module('laravelAndAngular.users', [
               template: '<a ui-sref="logout">Logout</a>'
             }
           },
-          data: { requireLogin: true }
+          data: {
+            requireLogin: true,
+            user: true
+          }
           
         })
 
@@ -44,7 +47,10 @@ angular.module('laravelAndAngular.users', [
         /////////////////////
         .state('users.list', {
           url: '',
-          data: { requireLogin: true },
+          data: {
+            requireLogin: true,
+            user: true
+          },
           templateUrl: 'app/users/templates/users.list.html'
         });
     }
