@@ -26,7 +26,7 @@ return [
 	|
 	*/
 
-	'default' => 'mysql',
+	'default' => 'mongodb',
 
 	/*
 	|--------------------------------------------------------------------------
@@ -63,6 +63,15 @@ return [
 			'prefix'    => '',
 			'strict'    => false,
 		],
+
+        'mongodb' => [
+            'driver'   => 'mongodb',
+            'host'     => 'localhost',
+            'port'     => 27017,
+            'username' => '',
+            'password' => '',
+            'database' => 'database'
+        ],
 
 		'pgsql' => [
 			'driver'   => 'pgsql',

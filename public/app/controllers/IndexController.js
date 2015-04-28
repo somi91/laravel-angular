@@ -5,4 +5,11 @@ app.controller('IndexController',['$scope', '$http', '$location', function($scop
 
     $scope.proba = "ovo je kada sam na root url-u";
 
+    $http({
+        method: "GET",
+        url: "getUsers" //   /filterData
+    }).success(function(promise){
+        console.log(promise[0].name);
+    });
+
 }]);
