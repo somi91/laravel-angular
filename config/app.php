@@ -145,6 +145,11 @@ return [
 		'App\Providers\EventServiceProvider',
 		'App\Providers\RouteServiceProvider',
 
+		/*
+		 * MongoDB...
+		 */
+		'Jenssegers\Mongodb\MongodbServiceProvider',
+
 	],
 
 	/*

@@ -1,5 +1,7 @@
 <?php namespace App\Http\Controllers;
 
+use App\Models\TestModel;
+
 class HomeController extends Controller {
 
 	/*
@@ -20,7 +22,7 @@ class HomeController extends Controller {
 	 */
 	public function __construct()
 	{
-		$this->middleware('auth');
+//		$this->middleware('auth');
 	}
 
 	/**
@@ -32,5 +34,12 @@ class HomeController extends Controller {
 	{
 		return view('home');
 	}
+
+    public function getUsers()
+    {
+        $user = new TestModel();
+        $users = $user->all();
+        return $users;
+    }
 
 }
