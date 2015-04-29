@@ -4,6 +4,7 @@ angular.module('laravelAndAngular', [
   'laravelAndAngular.users.service',
   'laravelAndAngular.utils.service',
   'laravelAndAngular.bends',
+  'laravelAndAngular.bends.service',
   'ui.router'
 ])
 

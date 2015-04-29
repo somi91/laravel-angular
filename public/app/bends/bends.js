@@ -1,5 +1,4 @@
 angular.module('laravelAndAngular.bends', [
-  'laravelAndAngular.users',
   'ui.router'
 ])
   
@@ -10,7 +9,7 @@ angular.module('laravelAndAngular.bends', [
         // the log-on screen
         .state('loginAsBend',{
             url : '/loginAsBend',
-            templateUrl : 'app/users/templates/login.html',
+            templateUrl : 'app/bends/templates/login.html',
             controller : 'LoginController',
             data: { requireLogin: false }
         })

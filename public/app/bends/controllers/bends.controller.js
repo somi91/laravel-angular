@@ -1,8 +1,8 @@
 angular
     .module('laravelAndAngular.bends')
-    .controller('BendsController', UsersController);
+    .controller('BendsController', BendsController);
 
-UsersController.$inject = ['$scope', '$state'];
-function UsersController($scope, $state) {
+BendsController.$inject = ['$scope', '$state'];
+function BendsController($scope, $state) {
 
 };

@@ -34,6 +34,7 @@
     // <script type="text/javascript" src="app/users/controllers/item.edit.controller.js"></script>
     // <script type="text/javascript" src="app/users/controllers/detail.item.controller.js"></script> -->
     <script type="text/javascript" src="app/bends/controllers/bends.controller.js"></script>
+    <script type="text/javascript" src="app/bends/controllers/login.controller.js"></script>
 
     <!-- Services -->
     <script type="text/javascript" src="app/users/services/users.services.js"></script>
@@ -41,6 +42,8 @@
     <script type="text/javascript" src="app/utils/utils.service.js"></script>
 
     <script type="text/javascript" src="app/bends/services/bends.services.js"></script>
+    <script type="text/javascript" src="app/bends/services/auth.service.js"></script>
+    <script type="text/javascript" src="app/bends/services/session.service.js"></script>
 
     <!-- Directives -->
 

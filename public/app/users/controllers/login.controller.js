@@ -21,7 +21,7 @@ function LoginController($scope, $state, authService, users) {
 	function doRedirect(check) {
 		if(check == "users"){
 			authService.isLoggedInAsUser = true;
-		} else{
+		} else {
 			authService.isLoggedInAsBend = true;
   		}
 		window.location.href = '#/'+check;
