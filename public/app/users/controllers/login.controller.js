@@ -20,7 +20,7 @@ function LoginController($scope, $state, authService, users) {
 
 	function doRedirect(check) {
 		if(check == "users"){
-			authService.isLoggedInAsUser = true;	
+			authService.isLoggedInAsUser = true;
 		} else{
 			authService.isLoggedInAsBend = true;
   		}
