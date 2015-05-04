@@ -16,9 +16,13 @@ Route::get('/', function() {
     return View::make('welcome');
 });
 
-Route::group(array('prefix'=>'/api', 'middleware' => 'bends'),function(){
+Route::group(array('prefix'=>'/bend'),function(){
 	Route::post('login/auth','Bends\AuthController@Login');
 	Route::get('login/destroy','Bends\AuthController@Logout');
+});
+
+Route::group(array('prefix'=>'/bendsApi', 'middleware' => 'bends'),function(){
+    Route::get('bend/data','Bends\BendsApi@GetBend');
 });
 
 Route::get('home', 'HomeController@index');

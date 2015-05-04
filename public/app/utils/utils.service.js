@@ -9,6 +9,23 @@ angular.module('laravelAndAngular.utils.service', [
     this.items = data.items;
     this.check = data.check;
   };
+  var Bend = function (data) {
+    this.id = data._id;
+    this.email = data.email;
+    this.password = data.password;
+  };
+
+  var getBend = function() {
+    return object.currentBend;
+  };
+
+  var object = {
+      "currentBend": {}
+  };
+
+  var setCurrentBend = function(data) {
+      object.currentBend = new Bend(data[0]);
+  };
 
   return {
     // Util for finding an object by its 'id' property among an array
@@ -17,6 +34,15 @@ angular.module('laravelAndAngular.utils.service', [
         if (a[i].id == id || a[i].name == id) return a[i];
       }
       return null;
+    },
+
+    createBendObject: function (data) {
+      setCurrentBend(data);
+      return new Bend(data);
+    },
+
+    getCurrentBend: function () {
+      return getBend();
     },
 
     createSpecificObject: function (data) {

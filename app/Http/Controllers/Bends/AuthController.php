@@ -7,16 +7,6 @@ use App\Models\TestModel;
 
 class AuthController extends BaseController{
 
-	/**
-	 * Create a new controller instance.
-	 *
-	 * @return void
-	 */
-	public function __construct()
-	{
-		$this->middleware('bends');
-	}
-
 	public function Login(){
 
 		$email = Input::get('email');

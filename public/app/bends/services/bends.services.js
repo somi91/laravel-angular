@@ -22,5 +22,11 @@ angular.module('laravelAndAngular.bends.service', [
       return utils.findById(arrayOfUsers, id);
     })
   };
+  factory.getBend = function () {
+      var nesto = utils.getCurrentBend();
+    console.log(nesto);
+    var bend = $http({method:'GET',url:'bendsApi/bend/data',data:nesto});
+    return bend;
+  };
   return factory;
 }]);
