@@ -9,9 +9,9 @@ function LoginController($scope, $state, authService, users) {
 	$scope.save = function(user) {
 		var user = user;
 		users.get(user.name).then(function (promise) {
-			if(promise !== null){
+			if(promise !== null) {
 				doRedirect(promise.check);
-			}else{
+			} else {
 				user.name = '';
 				user.password = '';
 			}

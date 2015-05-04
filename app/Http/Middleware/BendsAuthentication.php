@@ -3,6 +3,7 @@
 use Closure;
 use Input;
 use App\Models\TestModel;
+use Response;
 
 class BendsAuthentication {
 
@@ -37,15 +38,8 @@ class BendsAuthentication {
 	{
 		$user = new TestModel();
         $users = $user->where('email', '=', $this->email)->where('password', '=', $this->password)->get();
-        if(!$users){
-			if ($request->ajax())
-			{
-				return response('Unauthorized.', 401);
-			}
-			else
-			{
-				return redirect()->guest('auth/login');
-			}
+        if($users->isEmpty()){
+			return response::JSON(['error'=>['message'=>'Unauthorized request', 'status_code'=>401]]);
 		}
 
 		return $next($request);

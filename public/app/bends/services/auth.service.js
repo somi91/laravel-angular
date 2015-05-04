@@ -5,6 +5,7 @@ angular
 AuthSrvc.$inject = ['$http', 'utils', 'SessionService'];
 function AuthSrvc($http, utils, SessionService) {
   return{
+  	isLoggedInAsBend: false,
     auth:function(credentials){
       var authUser = $http({method:'POST',url:'api/login/auth',data:credentials});
       return authUser;

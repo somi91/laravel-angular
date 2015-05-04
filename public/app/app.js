@@ -9,8 +9,8 @@ angular.module('laravelAndAngular', [
 ])
 
 .run(
-  [          '$rootScope', '$state', '$stateParams', 'authService',
-    function ($rootScope,   $state,   $stateParams,   authService) {
+  [          '$rootScope', '$state', '$stateParams', 'authService', 'AuthSrvc',
+    function ($rootScope,   $state,   $stateParams,   authService,   AuthSrvc) {
       $rootScope.$state = $state;
       $rootScope.$stateParams = $stateParams;
 
@@ -22,7 +22,7 @@ angular.module('laravelAndAngular', [
                       && toState.data.bend
                       && toState.name == "bends.list"
                       && toState.data.requireLogin 
-                      && !authService.isLoggedInAsBend;
+                      && !AuthSrvc.isLoggedInAsBend;
         var userShouldLogin = toState.data !== undefined
                       && toState.data.user
                       && toState.name == "users.list"
@@ -45,7 +45,7 @@ angular.module('laravelAndAngular', [
         }
 
         // authenticated (previously)
-        if(authService.isLoggedInAsUser || authService.isLoggedInAsBend) 
+        if(authService.isLoggedInAsUser || AuthSrvc.isLoggedInAsBend) 
         {
           return;        
         }      
@@ -97,9 +97,9 @@ angular.module('laravelAndAngular', [
 
         .state('logout', {
           url: '/logout',
-          controller: function($scope, $window, authService) {
+          controller: function($scope, $window, authService, AuthSrvc) {
             authService.isLoggedInAsUser = false;
-            authService.isLoggedInAsBend = false;
+            AuthSrvc.isLoggedInAsBend = false;
             // $window.location.reload();
             $window.location.href = '#/login';
             // $route.reload();

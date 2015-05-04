@@ -10,7 +10,7 @@ angular.module('laravelAndAngular.bends', [
         .state('loginAsBend',{
             url : '/loginAsBend',
             templateUrl : 'app/bends/templates/login.html',
-            controller : 'LoginController',
+            controller : 'BendLoginController',
             data: { requireLogin: false }
         })
         //////////////
@@ -22,7 +22,7 @@ angular.module('laravelAndAngular.bends', [
           views: {
             '': {
               templateUrl: 'app/bends/templates/bends.html',
-              controller: 'UsersController'
+              controller: 'BendsController'
             },            
             'hint@': {
               template: '<a ui-sref="logout">Logout</a>'

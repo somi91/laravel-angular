@@ -34,7 +34,7 @@
     // <script type="text/javascript" src="app/users/controllers/item.edit.controller.js"></script>
     // <script type="text/javascript" src="app/users/controllers/detail.item.controller.js"></script> -->
     <script type="text/javascript" src="app/bends/controllers/bends.controller.js"></script>
-    <script type="text/javascript" src="app/bends/controllers/login.controller.js"></script>
+    <script type="text/javascript" src="app/bends/controllers/bend.login.controller.js"></script>
 
     <!-- Services -->
     <script type="text/javascript" src="app/users/services/users.services.js"></script>
