@@ -1,12 +1,10 @@
-<?php
+<?php namespace App\Http\Api;
 /**
  * Created by PhpStorm.
  * User: milos
  * Date: 5/4/2015
  * Time: 10:32 PM
  */
-
-namespace App\Http\Api\Bend;
 
 use App\Models\TestModel;
 
@@ -17,7 +15,6 @@ class Bend {
 
     public function __construct() {
         $this->model = new TestModel();
-
     }
 
     public static function GetBendInstance() {

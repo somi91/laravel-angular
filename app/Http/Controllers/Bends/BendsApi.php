@@ -8,12 +8,12 @@
 
 namespace App\Http\Controllers\Bends;
 
-use App\Http\Api\Bend\Bend;
-use Illuminate\Routing\Controller as BaseController;
-use Input;
+use App\Http\Api\Bend;
+use App\Http\Controllers\Controller;
 use Response;
+use Illuminate\Http\Request;
 
-class BendsApi extends BaseController {
+class BendsApi extends Controller {
 
     /**
      * Create a new controller instance.
@@ -25,11 +25,9 @@ class BendsApi extends BaseController {
         $this->middleware('bends');
     }
 
-    public function GetBend(Input $input)
+    public function GetBend(Request $request)
     {
-        $nestooo = $input::get('Bend');
-        return response::JSON(["nesto"=>$nestooo]);
-        $nesto = Bend::GetBendInstance()->FindBend($nestooo);
+        $nesto = Bend::GetBendInstance()->FindBend($request->query('id'));
         return response::JSON($nesto);
     }
 

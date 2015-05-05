@@ -25,7 +25,7 @@ angular.module('laravelAndAngular.bends.service', [
   factory.getBend = function () {
       var nesto = utils.getCurrentBend();
     console.log(nesto);
-    var bend = $http({method:'GET',url:'bendsApi/bend/data',data:nesto});
+    var bend = $http({method:'GET',url:'bendsApi/bend/data',params:nesto});
     return bend;
   };
   return factory;
