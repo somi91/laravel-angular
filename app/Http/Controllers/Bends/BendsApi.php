@@ -27,8 +27,8 @@ class BendsApi extends Controller {
 
     public function GetBend(Request $request)
     {
-        $nesto = Bend::GetBendInstance()->FindBend($request->query('id'));
-        return response::JSON($nesto);
+        $bend = Bend::GetBendInstance()->FindBend($request->query('id'));
+        return response::JSON($bend);
     }
 
 } 

@@ -5,6 +5,8 @@ use Input;
 use Illuminate\Routing\Controller as BaseController;
 use App\Models\TestModel;
 use Response;
+use App\Http\Api\Bend;
+use Illuminate\Http\Request;
 
 class AuthController extends BaseController{
 
@@ -27,6 +29,12 @@ class AuthController extends BaseController{
 		// 	return 'invalid username/pass combo';
 		// }
 	}
+
+    public function GetAllBends(Request $request)
+    {
+        $bends = Bend::GetBendInstance()->GetAllBends();
+        return response::JSON($bends);
+    }
 	 
 	public function Logout(){
 		Auth::logout();

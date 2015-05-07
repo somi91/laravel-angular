@@ -19,6 +19,7 @@ Route::get('/', function() {
 Route::group(array('prefix'=>'/bend'),function(){
 	Route::post('login/auth','Bends\AuthController@Login');
 	Route::get('login/destroy','Bends\AuthController@Logout');
+	Route::get('getAllBends','Bends\AuthController@GetAllBends');
 });
 
 Route::group(array('prefix'=>'/bendsApi', 'middleware' => 'bends'),function(){

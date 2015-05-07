@@ -29,4 +29,9 @@ class Bend {
         return $user;
     }
 
+    public function GetAllBends() {
+        $users = $this->model->all();
+        return $users;
+    }
+
 } 
