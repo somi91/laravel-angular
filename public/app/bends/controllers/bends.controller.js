@@ -22,8 +22,10 @@ function BendsController($scope, $state, bends) {
             alert(response.error.message)
         }else{
             console.log(response);
+            $scope.bends = response;
         }
     });
+
     bends.error(function(error){
 
     });
