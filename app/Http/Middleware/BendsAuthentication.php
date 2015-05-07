@@ -37,8 +37,18 @@ class BendsAuthentication {
 	public function handle($request, Closure $next)
 	{
 		$user = new TestModel();
-        $users = $user->where('email', '=', $this->email)->where('password', '=', $this->password)->get();
-        if($users->isEmpty()){
+		if($this->email != null && $this->password != null){
+	        $users = $user->where('email', '=', $this->email)->where('password', '=', $this->password)->get();
+	        if(!$request->ajax()){
+	        	if($users->isEmpty()){
+					return response::JSON(['error'=>['message'=>'Unauthorized request', 'status_code'=>401]]);
+				}
+	    	}
+	        
+	        if($users->isEmpty()){
+				return response::JSON(['error'=>['message'=>'Unauthorized request', 'status_code'=>401]]);
+			}
+		} else {
 			return response::JSON(['error'=>['message'=>'Unauthorized request', 'status_code'=>401]]);
 		}
 

@@ -4,6 +4,7 @@ use Auth;
 use Input;
 use Illuminate\Routing\Controller as BaseController;
 use App\Models\TestModel;
+use Response;
 
 class AuthController extends BaseController{
 
@@ -13,10 +14,11 @@ class AuthController extends BaseController{
 		$password = Input::get('password');
         $user = new TestModel();
         $users = $user->where('email', '=', $email)->where('password', '=', $password)->get();
-        if($users){
-        	return $users;
+        
+        if($users->isEmpty()){
+        	return response::JSON(['error'=>['message'=>'invalid username/pass combo', 'status_code'=>422]]);
         } else {
-        	return 'invalid username/pass combo';
+        	return $users;
         }
 
 		// if(Auth::attempt(Input::only('email','password'))){
