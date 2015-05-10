@@ -1,12 +1,13 @@
 <div>
-<h1>Ovo su bendovi</h1>
+    <div class="jumbotron text-center">
+        <h3>Pretraga bendova</h3>
+        <input ng-model="bandsString" type="text" class="form-control">
+    </div>
+    <ul class="list-group">
+        <!--<span>broj bendova(bzv): {{bends.length}}</span>-->
+        <li class="list-group-item" ng-repeat="bend in bends | bandsSearch:bandsString">
+            <h2>Naziv benda:<a href="#">{{bend.bandName}}</a></h2>
+            <h4>broj clanova: {{bend.members}}</h4>
+        </li>
+    </ul>
 </div>
-<ul>
-    <span>broj bendova(bzv): {{bends.length}}</span>
-    <hr/>
-    <li ng-repeat="bend in bends">
-        <span>Naziv benda:</span><a href="#">{{bend.bandName}}</a><br/>
-        <span>broj clanova: {{bend.members}}</span>
-        <hr/>
-    </li>
-</ul>

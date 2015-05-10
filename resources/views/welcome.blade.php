@@ -27,6 +27,9 @@
     <script type="text/javascript" src="app/users/users.js"></script>
     <script type="text/javascript" src="app/bends/bends.js"></script>
 
+    <!-- Filters -->
+    <script type="text/javascript" src="app/bends/filters/bends.filters.js"></script>
+
     <!-- Controllers -->
     <script type="text/javascript" src="app/users/controllers/login.controller.js"></script>
     <script type="text/javascript" src="app/users/controllers/users.controller.js"></script>

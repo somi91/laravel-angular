@@ -5,6 +5,7 @@ angular.module('laravelAndAngular', [
   'laravelAndAngular.utils.service',
   'laravelAndAngular.bends',
   'laravelAndAngular.bends.service',
+  'laravelAndAngular.bends.filter',
   'ui.router'
 ])
 
