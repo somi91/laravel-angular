@@ -39,12 +39,20 @@ angular.module('laravelAndAngular.bends', [
         // Bends > List //
         /////////////////////
         .state('bends.list', {
-          url: '',
+          url: '/{bandId}',
           data: {
             requireLogin: true,
             bend: true
           },
-          templateUrl: 'app/bends/templates/bends.list.html'
+          views: {
+              'specific-band': {
+                  templateUrl: 'app/bends/templates/bends.list.html',
+                  controller: ['$scope', '$stateParams', 'utils',
+                      function (  $scope,   $stateParams,   utils) {
+                          $scope.bend = utils.findById($scope.bends, $stateParams.bandId);
+                      }]
+              }
+          }
         });
     }
   ]

@@ -16,6 +16,9 @@ function BendsController($scope, $state, bends) {
 
     });
 
+    //create emtpy array first and then store data inside it !!!
+    $scope.bends = [];
+
     var bends = bends.getAllBends();
     bends.success(function(response){
         if(response.error){

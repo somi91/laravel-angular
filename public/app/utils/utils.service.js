@@ -31,7 +31,7 @@ angular.module('laravelAndAngular.utils.service', [
     // Util for finding an object by its 'id' property among an array
     findById: function findById(a, id) {
       for (var i = 0; i < a.length; i++) {
-        if (a[i].id == id || a[i].name == id) return a[i];
+        if (a[i]._id == id || a[i].bandName == id) return a[i];
       }
       return null;
     },
