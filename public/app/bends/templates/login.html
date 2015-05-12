@@ -1,13 +1,34 @@
-<div id="login" class="col-md-4 col-md-offset-4">
-	<div id="login-form">
-		<h4>Login</h4>
-		<form name="login">
-			<!--username-->
-			<div class="form-group"><input name="email" type="text" ng-model="user.email" /></div>
-			<!--password-->
-			<div class="form-group"><input name="password" type="password" ng-model="user.password" /></div>
-			<!--submit-->
-			<div class="form-group"><button class="btn btn-primary" type="submit" ng-click="loginSubmit(user)">Login</button></div>
-		</form>
-	</div>
+<div class="col-md-6 col-md-offset-3">
+    <div class="panel panel-login">
+        <div class="panel-heading">
+            <div class="row">
+                <div class="col-xs-12">
+                    <h4 class="active">Login</h4>
+                </div>
+            </div>
+            <hr>
+        </div>
+        <div class="panel-body">
+            <div class="row">
+                <div class="col-lg-12">
+                    <form id="login-form" role="form" style="display: block;">
+                        <div class="form-group">
+                            <input ng-model="user.email" type="text" name="email" id="email" tabindex="1" class="form-control" placeholder="Username" value="">
+                        </div>
+                        <div class="form-group">
+                            <input ng-model="user.password" type="password" name="password" id="password" tabindex="2" class="form-control" placeholder="Password">
+                        </div>
+                        <div class="form-group">
+                            <div class="row">
+                                <div class="col-sm-6 col-sm-offset-3">
+                                    <input ng-click="loginSubmit(user)" type="submit" name="login-submit" id="login-submit" tabindex="4" class="form-control btn btn-login" value="Log In">
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 </div>

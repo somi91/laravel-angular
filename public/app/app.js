@@ -6,6 +6,7 @@ angular.module('laravelAndAngular', [
   'laravelAndAngular.bends',
   'laravelAndAngular.bends.service',
   'laravelAndAngular.bends.filter',
+  'laravelAndAngular.bends.facebook',
   'ui.router'
 ])
 
@@ -126,6 +127,11 @@ angular.module('laravelAndAngular', [
                             'proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>';
               }, 100);
             }]
+        })
+
+        .state('profile', {
+          url: 'profile',
+          templateUrl: "app/bends/templates/profile.html"
         })
     }
   ]

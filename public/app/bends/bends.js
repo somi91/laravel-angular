@@ -25,7 +25,7 @@ angular.module('laravelAndAngular.bends', [
               controller: 'BendsController'
             },            
             'hint@': {
-              template: '<a ui-sref="logout">Logout</a>'
+              templateUrl: 'app/bends/templates/loggedIn.html'
             }
           },
           data: {
