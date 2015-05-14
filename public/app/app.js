@@ -7,6 +7,7 @@ angular.module('laravelAndAngular', [
   'laravelAndAngular.bends.service',
   'laravelAndAngular.bends.filter',
   'laravelAndAngular.bends.facebook',
+  'laravelAndAngular.bends.chartStats',
   'ui.router'
 ])
 
@@ -130,8 +131,13 @@ angular.module('laravelAndAngular', [
         })
 
         .state('profile', {
-          url: 'profile',
+          url: '/profile',
           templateUrl: "app/bends/templates/profile.html"
+        })
+
+        .state('stats', {
+          url: '/stats',
+          templateUrl: "app/bends/templates/stats.html"
         })
     }
   ]

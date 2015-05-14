@@ -3,3 +3,4 @@
 /public/app/bower_components
 .env
 .idea/
+.idea/workspace.xml

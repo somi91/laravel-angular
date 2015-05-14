@@ -51,6 +51,7 @@
     <script type="text/javascript" src="app/bends/services/session.service.js"></script>
 
     <!-- Directives -->
+    <script type="text/javascript" src="app/bends/directives/chart/bends.chart.js"></script>
 
     <!-- Bootstrap -->
     <link href="app/bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
