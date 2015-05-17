@@ -1,9 +1,20 @@
 <div ng-controller="facebookCtrl" class="jumbotron text-center col-lg-8 col-lg-offset-2">
     <h2>Connect with facebook</h2>
     <button type="button" id="login" ng-click="login()">login</button>
-    <button type="button" id="api" ng-click="api()">api user data call</button>
+    <button type="button" id="api" ng-click="getFbInfo()">api user data call</button>
     <button type="button" id="remove_auth" ng-click="removeAuth()">remove auth</button>
+    <button type="button" id="profile_image" ng-click="getProfileImg()">profile image</button>
+    <button type="button" id="cover_image" ng-click="getCoverImg()">cover image</button>
+    <button type="button" id="fb_image" ng-click="getFbImages()">images</button>
     <pre>isReady: <span id="is_ready" ng-bind="facebookIsReady"></span></pre>
     <pre>status: <span id="login_status" ng-bind="loginStatus"></span></pre>
-    <pre>username: <span id="api_first_name" ng-bind="user.first_name"></span></pre>
+    <pre>username: <span id="api_first_name" ng-bind="user.name"></span></pre>
+    <pre>profile image: <img ng-src="{{profileImg}}" alt="profile image"/></pre>
+    <pre>cover image: <img ng-src="{{cover}}" alt="cover image"/></pre>
+    <pre>
+        <h3 class="text-center">images:</h3>
+        <ul class="fb-images">
+            <li ng-repeat="item in imgArray"><img ng-src="{{item}}" alt=""/></li>
+        </ul>
+    </pre>
 </div>
